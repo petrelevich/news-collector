@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  threads:
+    virtual:
+      enabled: true
+
+
+management:
+  server:
+    port: 8090
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true
+      probes:
+        enabled: true
+
+application:
+  rest:
+    api:
+      prefix: /api
+
+feeders:
+    nrd:
+      url: "https://nsddata.ru/ru/news/rss"
+
+
+data-source:
+  url: "jdbc:postgresql://localhost:5430/newsDb_test"
+  user: "usr"
+  pwd: "pwd"
+
+telegram:
+  host: "https://api.telegram.org"
+  token-file: "/path/"
+  chat-id: "id"

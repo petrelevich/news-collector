@@ -1,0 +1,15 @@
+services:
+  newsDb_test:
+    image: postgres:17.6
+    ports:
+      - "5430:5432"
+    environment:
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_USER: usr
+      POSTGRES_DB: newsDb_test
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U usr -d newsDb_test"]
+      start_period: 10s
+      interval: 5s
+      timeout: 10s
+      retries: 10

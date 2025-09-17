@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, beans
+
+application:
+  rest:
+    api:
+      prefix: /api
+
+feeders:
+    nrd:
+      url: "http://localhost:8080/test"
+
+data-source:
+  url: "jdbc:postgresql://localhost:5430/newsDb_test"
+  user: "usr"
+  pwd: "pwd"
+
+telegram:
+  host: "http://localhost"
+  token-file: "./src/test/resources/token_file"
+  chat-id: "id"
